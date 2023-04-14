@@ -17,6 +17,7 @@ jobs:
         env:
           ssh_key: ${{ secrets.SSH_KEY }}
         run: |
+          mkdir -p ~/.ssh
           echo "$ssh_key" > ~/.ssh/id_rsa
           cat ~/.ssh/id_rsa
           scp -r -i ~/.ssh/id_rsa dist/shopping-list marcin@marczyk.synology.me:/volume1/www/test
