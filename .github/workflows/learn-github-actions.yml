@@ -20,4 +20,4 @@ jobs:
       - run: ls dist
       - name: deploy
         run: |
-          scp -r -i ~/.ssh/id_rsa dist/shopping-list marcin@marczyk.synology.me:/volume1/www/test
+          scp -r -i ~/.ssh/id_rsa dist/shopping-list marcin@marczyk.synology.me:/volume1/www/
