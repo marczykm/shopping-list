@@ -19,5 +19,11 @@ jobs:
       - run: ng build
       - run: ls dist
       - name: deploy
-        run: |
-          scp -r -i ~/.ssh/id_rsa dist/shopping-list marcin@marczyk.synology.me:/volume1/www/
+        uses: burnett01/rsync-deployments@5.2.1
+        with:
+          switches: -avzr
+          path: dist/
+          remote_path: /volume1/www/test/
+          remote_host: marczyk.synology.me
+          remote_user: marcin
+          remote_key: ${{ secrets.SSH_KEY }}
