@@ -1,8 +1,8 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: build-and-deploy
+run-name: ${{ github.actor }} is deploying shopping-list
 on: [push]
 jobs:
-  check-bats-version:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -13,3 +13,9 @@ jobs:
       - run: npm install
       - run: ng build
       - run: ls dist
+      - name: deploy
+        env:
+          ssh_key: ${{ secrets.SSH_KEY }}
+        run: |
+          echo "$ssh_key" > id_rsa.pub
+          scp -r -i id_rsa.pub dist/shopping-list marcin@marczyk.synology.me/volume1/www/test
