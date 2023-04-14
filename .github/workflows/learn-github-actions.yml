@@ -27,3 +27,4 @@ jobs:
           remote_host: marczyk.synology.me
           remote_user: marcin
           remote_key: ${{ secrets.SSH_KEY }}
+          remote_port: 873
