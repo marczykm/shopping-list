@@ -18,4 +18,4 @@ jobs:
           ssh_key: ${{ secrets.SSH_KEY }}
         run: |
           echo "$ssh_key" > id_rsa.pub
-          scp -r -i id_rsa.pub dist/shopping-list marcin@marczyk.synology.me/volume1/www/test
+          scp -r -i id_rsa.pub dist/shopping-list marcin@marczyk.synology.me:/volume1/www/test
