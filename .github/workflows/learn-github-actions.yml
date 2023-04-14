@@ -5,11 +5,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_KEY }}
-          known_hosts: ${{ secrets.KNOWN_HOSTS }}
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -18,13 +13,3 @@ jobs:
       - run: npm install
       - run: ng build
       - run: ls dist
-      - name: deploy
-        uses: burnett01/rsync-deployments@5.2.1
-        with:
-          switches: -avzr
-          path: dist/
-          remote_path: /volume1/www/test/
-          remote_host: marczyk.synology.me
-          remote_user: marcin
-          remote_key: ${{ secrets.SSH_KEY }}
-          remote_port: 2222
