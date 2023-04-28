@@ -40,4 +40,8 @@ export class RecipeService implements OnInit {
     this.shoppingListService.addIngredients(ingredients);
   }
 
+  getRecipe(index: number){
+    return this.recipes[index];
+  }
+
 }
