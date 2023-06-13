@@ -10,7 +10,7 @@ build-job:
   script:
     - echo "Compiling the code..."
     - apt update
-    - apt install npm openssh-client -y
+    - apt install npm -y
     - npm install
     - npm install -g @angular/cli
     - ng build
@@ -24,6 +24,7 @@ deploy-job:
   environment: production
   script:
     - echo "Deploying application..."
+    - apt install openssh-client -y
     - echo "$SSH_KEYS" > ~/id_rsa.pub
     - scp -P 2222 -r -i ~/id_rsa dist/shopping-list/* marcin@marczyk.synology.me:/volume1/www/shopping-list
     - echo "Application successfully deployed."
