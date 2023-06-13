@@ -12,7 +12,7 @@ build-job:
     - apt update
     - apt install npm -y
     - npm install
-    - np install @angular/cli
+    - npm install @angular/cli
     - ng build
     - echo "Compile complete."
   artifacts:
