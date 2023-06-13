@@ -15,7 +15,7 @@ build-job:
     - ng build
     - echo "Compile complete."
   artifacts:
-    path:
+    paths:
       - dist
 
 deploy-job:
