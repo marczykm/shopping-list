@@ -24,6 +24,7 @@ deploy-job:
   environment: production
   script:
     - echo "Deploying application..."
+    - apt update
     - apt install openssh-client -y
     - echo "$SSH_KEYS" > ~/id_rsa.pub
     - scp -P 2222 -r -i ~/id_rsa dist/shopping-list/* marcin@marczyk.synology.me:/volume1/www/shopping-list
