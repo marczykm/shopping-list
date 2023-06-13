@@ -10,7 +10,7 @@ build-job:
   script:
     - echo "Compiling the code..."
     - apt update
-    - apt install npm -y
+    - apt install npm openssh-client -y
     - npm install
     - npm install -g @angular/cli
     - ng build
