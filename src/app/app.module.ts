@@ -18,7 +18,6 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { RecipeService } from './recipes/recipe.service';
 import { ShortenPipe } from './shorten.pipe';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,6 @@ import { AuthComponent } from './auth/auth.component';
     DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
-    AuthComponent,
     ShortenPipe
   ],
   imports: [
