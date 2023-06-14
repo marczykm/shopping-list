@@ -21,7 +21,7 @@ jobs:
       - name: deploy
         run: |
           scp -P 2222 -r -i ~/.ssh/id_rsa dist/shopping-list/* marcin@marczyk.synology.me:/volume1/www/test
-      - run: echo $PAT | docker login ghcr.io -u marczykm --password-stdin
+      # - run: echo $PAT | docker login ghcr.io -u marczykm --password-stdin
       - run: docker build . -t ghcr.io/marczykm/shopping-list:latest
       - run: docker push ghcr.io/marczykm/shopping-list:latest
   
