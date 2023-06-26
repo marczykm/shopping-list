@@ -22,9 +22,9 @@ jobs:
         run: |
           scp -P 2222 -r -i ~/.ssh/id_rsa dist/shopping-list/* marcin@marczyk.synology.me:/volume1/www/shopping-list
       - name: Log in to the Container registry
-        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        uses: docker/login-action@v2
         with:
-          registry: ${{ env.REGISTRY }}
+          registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Extract metadata (tags, labels) for Docker
