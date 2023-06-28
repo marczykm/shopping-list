@@ -1,0 +1,34 @@
+default:
+  image: 'ubuntu:23.10'
+
+stages:
+  - build
+  - deploy
+
+build-job:
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - apt update
+    - apt install npm -y
+    - npm install
+    - npm install -g @angular/cli
+    - ng build
+    - echo "Compile complete."
+  artifacts:
+    paths:
+      - dist
+
+deploy-job:
+  stage: deploy
+  environment: production
+  script:
+    - echo "Deploying application..."
+    - apt update
+    - apt install openssh-client -y
+    - echo "$SSH_KEYS" > ~/id_rsa.pub
+    - scp -P 2222 -r -i ~/id_rsa dist/shopping-list/* marcin@marczyk.synology.me:/volume1/www/shopping-list
+    - echo "Application successfully deployed."
+  artifacts:
+    paths:
+      - dist
