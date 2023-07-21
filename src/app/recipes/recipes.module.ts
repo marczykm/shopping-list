@@ -10,6 +10,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ShortenPipe } from "../shorten.pipe";
 import { RecipesRoutingModule } from "./recipes-routing.module";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { RecipesRoutingModule } from "./recipes-routing.module";
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        RecipesRoutingModule
+        RecipesRoutingModule,
+        SharedModule
     ]
 })
 export class RecipesModule {
