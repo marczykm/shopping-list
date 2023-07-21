@@ -4,6 +4,7 @@ import { LoadingSpinnerComponent } from "./loading-spinner/loading-spinner.compo
 import { PlaceholderDirective } from "./placeholder/placeholder.directive";
 import { DropdownDirective } from "./dropdown.directive";
 import { CommonModule } from "@angular/common";
+import { ShortenPipe } from "../shorten.pipe";
 
 @NgModule({
     declarations: [
@@ -11,6 +12,7 @@ import { CommonModule } from "@angular/common";
         LoadingSpinnerComponent,
         PlaceholderDirective,
         DropdownDirective,
+        ShortenPipe
     ],
     imports: [
         CommonModule
@@ -21,6 +23,7 @@ import { CommonModule } from "@angular/common";
         PlaceholderDirective,
         DropdownDirective,
         CommonModule,
+        ShortenPipe
     ]
 })
 export class SharedModule {}
