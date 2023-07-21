@@ -5,32 +5,12 @@ import { ShoppingListService } from "../shopping-list/shopping-list.service";
 import { Subject } from "rxjs";
 
 @Injectable()
-export class RecipeService implements OnInit {
+export class RecipeService {
   recipesChange = new Subject<Recipe[]>();
 
   constructor(private shoppingListService: ShoppingListService) { }
 
-  ngOnInit(): void {
-  }
 
-  // private recipes: Recipe[] = [
-  //   new Recipe(
-  //     'A Test Recipe 1',
-  //     'This is simply a test 1 This is simply a test 1 This is simply a test 1 This is simply a test 1 This is simply a test 1 This is simply a test 1 This is simply a test 1 This is simply a test 1 ',
-  //     'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/990402-ians-recipe-01-IMG_4724.jpg/800px-990402-ians-recipe-01-IMG_4724.jpg',
-  //     [
-  //       new Ingredient('Meat', 1), new Ingredient('French Fries', 20)
-  //     ]
-  //   ),
-  //   new Recipe(
-  //     'A Test Recipe 2',
-  //     'This is simply a test 2',
-  //     'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/990402-ians-recipe-01-IMG_4724.jpg/800px-990402-ians-recipe-01-IMG_4724.jpg',
-  //     [
-  //       new Ingredient('Buns', 2), new Ingredient('Meat', 1)
-  //     ]
-  //   )
-  // ];
   private recipes: Recipe[] = [];
 
   setRecipes(recipes: Recipe[]){
