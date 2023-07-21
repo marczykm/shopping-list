@@ -9,6 +9,7 @@ import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ShortenPipe } from "../shorten.pipe";
+import { RecipesRoutingModule } from "./recipes-routing.module";
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { ShortenPipe } from "../shorten.pipe";
         RouterModule,
         CommonModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        RecipesRoutingModule
     ],
     exports: [
         RecipesComponent,
